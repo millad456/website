@@ -1,15 +1,14 @@
 /* Fonts and Base Styles */
-
-/* CSS Styles */
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
   color: #333;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+/* Sidebar Styles */
 #sidebar {
   background: #343a40;
   color: white;
@@ -18,8 +17,22 @@ body {
   height: 100vh;
   padding: 2rem 1rem;
   text-align: center;
+  z-index: 1000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertical centering */
+  align-items: center; /* Horizontal centering */
 }
 
+.sidebar-content {
+  width: 100%; /* Ensure full width of sidebar */
+  margin: auto 0; /* Helps with vertical centering */
+}
+
+.profile-pic {
+  margin: 0 auto 1.5rem; /* Centered with bottom margin */
+}
 .profile-pic {
   border-radius: 50%;
   border: 5px solid #495057;
@@ -63,12 +76,14 @@ body {
   color: #bd5d38;
 }
 
-/* Main Content */
+/* Main Content Styles */
 main {
   margin-left: 250px;
   padding: 0 4rem;
+  transition: margin-left 0.3s ease;
 }
 
+/* Section Centering */
 section {
   min-height: 100vh;
   display: flex;
@@ -76,12 +91,16 @@ section {
   justify-content: center;
   padding: 4rem 0;
   box-sizing: border-box;
+  scroll-margin-top: 20px;
 }
 
-h1,
-h2,
-h3 {
-  font-family: "Saira Extra Condensed", sans-serif;
+section > div {
+  width: 100%; /* Ensures content doesn't overflow */
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: 'Saira Extra Condensed', sans-serif;
   font-weight: 700;
 }
 
@@ -95,39 +114,13 @@ h1 {
   color: #bd5d38;
 }
 
-.contact-info {
-  margin: 1.5rem 0;
+.subheading {
+  font-size: 1.2rem;
+  margin-top: 0;
+  color: #6c757d;
 }
 
-.contact-info a {
-  color: #bd5d38;
-  text-decoration: none;
-  margin-right: 1rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  position: relative;
-  display: inline-block;
-}
-
-h2::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 50px;
-  height: 3px;
-  background: #bd5d38;
-}
-
+/* Content Elements */
 .item {
   margin-bottom: 2.5rem;
 }
@@ -136,14 +129,6 @@ h2::after {
   color: #6c757d;
   margin: 0.5rem 0;
   font-style: italic;
-}
-
-ul {
-  padding-left: 1.2rem;
-}
-
-ul li {
-  margin-bottom: 0.5rem;
 }
 
 .skills-list {
@@ -162,7 +147,13 @@ ul li {
   font-size: 0.9rem;
 }
 
-/* Responsive */
+/* Active Link Styling */
+#sidebar a.active {
+  color: #bd5d38 !important;
+  font-weight: 700;
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
   #sidebar {
     width: 100%;
@@ -170,28 +161,49 @@ ul li {
     position: relative;
     padding: 1rem;
   }
-
+  
   main {
     margin-left: 0;
     padding: 0 1.5rem;
   }
-
+  
   .profile-pic {
     width: 100px;
     height: 100px;
   }
-
+  
   section {
     min-height: auto;
     padding: 3rem 0;
   }
-
+  
   h1 {
     font-size: 2.5rem;
   }
-
+  
   .contact-info a {
     display: block;
     margin: 0.5rem 0;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+/* Adjust the scrolling speed */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+    scroll-timeline: auto;
+    scroll-snap-type: none; /* Remove if you don't want snap points */
+  }
+  
+  /* Faster smooth scrolling */
+  [data-scroll-container] {
+    scroll-behavior: smooth;
+    scroll-timing-function: cubic-bezier(0.22, 1, 0.36, 1); /* Faster curve */
   }
 }
