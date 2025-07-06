@@ -10,7 +10,8 @@ body {
 
 /* Sidebar Styles */
 #sidebar {
-  background: #343a40;
+  /*background: #343a40;*/
+  background: #bd5d38;
   color: white;
   width: 250px;
   position: fixed;
@@ -35,7 +36,7 @@ body {
 }
 .profile-pic {
   border-radius: 50%;
-  border: 5px solid #495057;
+  border: 5px solid #CA7D60;
   width: 150px;
   height: 150px;
   object-fit: cover;
@@ -147,9 +148,29 @@ h1 {
   font-size: 0.9rem;
 }
 
+/* Social Icons in Summary Section */
+#summary .social-icons {
+  display: flex;
+  justify-content: left;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+#summary .social-icons a {
+  color: #bd5d38; /* Your highlight color */
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+#summary .social-icons a:hover {
+  color: #9a4c2e; /* Darker shade */
+  transform: scale(1.2);
+}
+
 /* Active Link Styling */
 #sidebar a.active {
-  color: #bd5d38 !important;
+  /*color: #bd5d38 !important;*/
+  color: white;
   font-weight: 700;
 }
 
