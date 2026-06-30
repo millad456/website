@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,38 +7,58 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Saira+Extra+Condensed:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <!-- Sidebar -->
-  <script src="js/loadSidebar.js" defer></script>
 </head>
 <body>
 
-  <!-- Main Content -->
+  <!-- ===== Navigation Bar ===== -->
+  <nav id="navbar">
+    <a href="#summary" class="nav-logo">
+      Millad<span class="accent">.dev</span>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#summary" class="active">Home</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+          <i class="fas fa-sun"></i>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ===== Main Content ===== -->
   <main>
     <section id="summary">
-      <div>
+      <div class="anim-fade-up">
         <h1>Millad Mikoto <span class="highlight">Bahrami</span></h1>
         <div class="contact-info">
-          <a href="mailto:millad.bahrami@gmail.com">millad.bahrami@gmail.com</a>
-          <a href="tel:6479948742">(647) 994-8742</a>
-          <a href="#">Toronto, ON</a>
-          <a href="https://www.linkedin.com/in/millad-bahrami-360293195/" target="_blank">LinkedIn</a>
-          <a href="https://github.com/millad456" target="_blank">GitHub.com/millad456</a>
-          <a href="https://www.youtube.com/watch?v=SRT-21i36ms&list=PL-hiD96-U89ERD7Gi32cFxG1NK02Tm1QY" target="_blank">Video Portfolio</a>
+          <a href="mailto:millad.bahrami@gmail.com"><i class="fas fa-envelope"></i> millad.bahrami@gmail.com</a>
+          <a href="tel:6479948742"><i class="fas fa-phone"></i> (647) 994-8742</a>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> Toronto, ON</a>
+          <a href="https://www.linkedin.com/in/millad-bahrami-360293195/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/millad456" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://www.youtube.com/watch?v=SRT-21i36ms&list=PL-hiD96-U89ERD7Gi32cFxG1NK02Tm1QY" target="_blank"><i class="fab fa-youtube"></i> Video Portfolio</a>
         </div>
         
         <h2>Summary</h2>
         <p style="max-width: 700px;">Recent Computer Science graduate with hands-on experience in cloud technologies (GCP, Docker), distributed systems, and building scalable systems with a focus on security. Eager for industry experience.</p>
-      </div>
       
-      <div class="social-icons">
-        <a href="https://github.com/millad456" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/millad-bahrami-360293195/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:millad.bahrami@gmail.com"><i class="fas fa-envelope"></i></a>
+        <div class="social-icons">
+          <a href="https://github.com/millad456" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/millad-bahrami-360293195/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:millad.bahrami@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
       </div>
     </section>
 
     <section id="experience">
-      <div>
+      <div class="anim-fade-up">
         <h2>Experience</h2>
         
         <div class="item">
@@ -73,64 +93,103 @@
     </section>
 
     <section id="projects">
-      <div>
+      <div class="anim-fade-up">
         <h2>Projects</h2>
-        <div class="item">
-          <h3><a href="https://millad456.github.io/EnergyWarMap/" class="project-link">EnergyWarMap</a></h3>
-          <p class="meta">JavaScript, Leaflet, HTML CSS | 2026</p>
-          <p>With rising geopolitical risks and unplanned incidents affecting oil and gas facilities worldwide, this
-            interactive map visualizes the locations of disruptions, overlays them on current oil & gas infrastructure,
-            and incorporates real-time price data from global energy markets.</p>
-          <p>This is my first mapping project. I used data from Global Energy Monitor for current fossil fuel
-            infrastructure to make the base of the map, and used market data from AlphaVantage's API to get market data.
-            Mapping was done with leaflet.
-          </p>
-          <p>I hope this tool proves useful for energy sector analysts and investors navigating a volatile landscape.
-          </p>
-          <p><a href="https://www.youtube.com/watch?v=tMpcsMJPiAM" target="_blank">YouTube Demo</a></p>
-        </div>
-        <div class="item">
-          <h3><a href="https://millad456.github.io/us-oil-doomsday-clock/" class="project-link">US Oil Doomsday Clock</a></h3>
-          <p class="meta">JavaScript, Chart.js, HTML5, CSS3, EIA API | 2026</p>
-          <p>A real-time dashboard tracking the depletion of the United States Strategic Petroleum Reserve (SPR). Features a doomsday-style countdown clock, live EIA data, historic SPR chart (~10 years), oil spot prices (WTI & Brent), and a news ticker.</p>
-          <p>Built as a single-page static site with vanilla JavaScript. Fetches live data from the U.S. Energy Information Administration API, calculates depletion projections from the weekly draw rate, and updates the countdown every second.</p>
-        </div>
-        <div class="item">
-          <h3><a href="https://millad456.itch.io/orbital-wrecking-ball" class="project-link">OWB (A web game)</a></h3>
-          <p class="meta">P5.js, HTML CSS | 2020</p>
-          <p>A physics-based destruction game built with JavaScript and P5.js</p>
-          <p>This was a fun project I made trying to make a game out of Newton's gravity equation as a mechanic</p>
-        </div>
-        
-        <div class="item">
-          <h3><a href="https://youtu.be/taKBkBe5-JE" class="project-link">Movie Review Sentiment Analysis</a></h3>
-          <p class="meta">Python, scikit-learn, HTML CSS | 2024-2026</p>
-          <p>Final Project for my Applications of Machine Learning course</p>
-          <p>Determines if the a movie review is positive or negative based on the language</p>
-          <p>From the imdb movie review dataset on Kaggle</p>
-          <p>Recently updated by me as a personal project</p>
-        </div>
-        
-        <div class="item">
-          <h3><a href="https://www.youtube.com/watch?v=SRT-21i36ms" class="project-link">2048 Solitaire in Excel</a></h3>
-          <p class="meta">VBA for Excel | 2020</p>
-          <p>Combines 2048 gameplay with solitaire mechanics using Excel VBA</p>
-          <p>At the end of my co op term at CGI, I was applying my knowledge of excel macros to make a game for fun</p>
-        </div>
+        <div class="project-grid">
+          <div class="project-card anim-fade-up-item stagger-1">
+            <h3><a href="https://millad456.github.io/EnergyWarMap/" target="_blank">EnergyWarMap</a></h3>
+            <div class="project-tech">
+              <span>JavaScript</span>
+              <span>Leaflet</span>
+              <span>HTML/CSS</span>
+              <span>AlphaVantage API</span>
+            </div>
+            <p class="meta">2026</p>
+            <p>With rising geopolitical risks and unplanned incidents affecting oil and gas facilities worldwide, this interactive map visualizes the locations of disruptions, overlays them on current oil & gas infrastructure, and incorporates real-time price data from global energy markets.</p>
+            <p>My first mapping project using data from Global Energy Monitor and market data from AlphaVantage's API.</p>
+            <div class="project-links">
+              <a href="https://millad456.github.io/EnergyWarMap/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="https://www.youtube.com/watch?v=tMpcsMJPiAM" target="_blank"><i class="fab fa-youtube"></i> YouTube Demo</a>
+            </div>
+          </div>
 
+          <div class="project-card anim-fade-up-item stagger-2">
+            <h3><a href="https://millad456.github.io/us-oil-doomsday-clock/" target="_blank">US Oil Doomsday Clock</a></h3>
+            <div class="project-tech">
+              <span>JavaScript</span>
+              <span>Chart.js</span>
+              <span>HTML5/CSS3</span>
+              <span>EIA API</span>
+            </div>
+            <p class="meta">2026</p>
+            <p>A real-time dashboard tracking the depletion of the United States Strategic Petroleum Reserve (SPR). Features a doomsday-style countdown clock, live EIA data, historic SPR chart (~10 years), oil spot prices (WTI & Brent), and a news ticker.</p>
+            <p>Built as a single-page static site with vanilla JavaScript. Fetches live data from the U.S. Energy Information Administration API, calculates depletion projections from the weekly draw rate, and updates the countdown every second.</p>
+            <div class="project-links">
+              <a href="https://millad456.github.io/us-oil-doomsday-clock/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="https://github.com/millad456/us-oil-doomsday-clock" target="_blank"><i class="fab fa-github"></i> Source</a>
+            </div>
+          </div>
 
+          <div class="project-card anim-fade-up-item stagger-3">
+            <h3><a href="https://millad456.itch.io/orbital-wrecking-ball" target="_blank">OWB (A web game)</a></h3>
+            <div class="project-tech">
+              <span>P5.js</span>
+              <span>JavaScript</span>
+              <span>HTML/CSS</span>
+            </div>
+            <p class="meta">2020</p>
+            <p>A physics-based destruction game built with JavaScript and P5.js. Uses Newton's gravity equation as a core gameplay mechanic.</p>
+            <div class="project-links">
+              <a href="https://millad456.itch.io/orbital-wrecking-ball" target="_blank"><i class="fas fa-external-link-alt"></i> Play</a>
+            </div>
+          </div>
 
-        <div class="item">
-          <h3><a href="https://www.youtube.com/watch?v=qXjTv_37JMg" class="project-link">MES Event Management Platform</a></h3>
-          <p class="meta">| 2024-2025</p>
-          <p>A web app for managing clubs and events</p>
-          <p>My capstone project, applying what we learned about web development</p>
+          <div class="project-card anim-fade-up-item stagger-4">
+            <h3><a href="https://youtu.be/taKBkBe5-JE" target="_blank">Movie Review Sentiment Analysis</a></h3>
+            <div class="project-tech">
+              <span>Python</span>
+              <span>scikit-learn</span>
+              <span>HTML/CSS</span>
+            </div>
+            <p class="meta">2024-2026</p>
+            <p>Final Project for my Applications of Machine Learning course. Determines if a movie review is positive or negative based on the language, using the IMDB movie review dataset from Kaggle.</p>
+            <div class="project-links">
+              <a href="https://youtu.be/taKBkBe5-JE" target="_blank"><i class="fab fa-youtube"></i> Demo</a>
+            </div>
+          </div>
+
+          <div class="project-card anim-fade-up-item stagger-5">
+            <h3><a href="https://www.youtube.com/watch?v=SRT-21i36ms" target="_blank">2048 Solitaire in Excel</a></h3>
+            <div class="project-tech">
+              <span>VBA</span>
+              <span>Excel</span>
+            </div>
+            <p class="meta">2020</p>
+            <p>Combines 2048 gameplay with solitaire mechanics using Excel VBA. Built after my co-op term at CGI, applying knowledge of Excel macros to make a game for fun.</p>
+            <div class="project-links">
+              <a href="https://www.youtube.com/watch?v=SRT-21i36ms" target="_blank"><i class="fab fa-youtube"></i> Demo</a>
+            </div>
+          </div>
+
+          <div class="project-card anim-fade-up-item stagger-6">
+            <h3><a href="https://www.youtube.com/watch?v=qXjTv_37JMg" target="_blank">MES Event Management Platform</a></h3>
+            <div class="project-tech">
+              <span>React</span>
+              <span>Django</span>
+              <span>Firebase</span>
+            </div>
+            <p class="meta">2024-2025</p>
+            <p>A web app for managing clubs and events — my capstone project, applying what we learned about web development.</p>
+            <div class="project-links">
+              <a href="https://www.youtube.com/watch?v=qXjTv_37JMg" target="_blank"><i class="fab fa-youtube"></i> Demo</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="education">
-      <div>
+      <div class="anim-fade-up">
         <h2>Education</h2>
         <div class="item">
           <h3>Computer Science</h3>
@@ -155,7 +214,7 @@
     </section>
 
     <section id="skills">
-      <div>
+      <div class="anim-fade-up">
         <h2>Additional Skills</h2>
         <ul class="skills-list">
           <li>C#</li>
@@ -185,14 +244,94 @@
   </main>
 
   <script>
-    // Smooth scrolling for navigation
+    // ===== Dark Mode Toggle =====
+    (function() {
+      const html = document.documentElement;
+      const toggle = document.getElementById('themeToggle');
+      const icon = toggle.querySelector('i');
+
+      // Load saved preference (default to dark)
+      const saved = localStorage.getItem('theme') || 'dark';
+      html.setAttribute('data-theme', saved);
+      icon.className = saved === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+
+      toggle.addEventListener('click', () => {
+        const current = html.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        icon.className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      });
+    })();
+
+    // ===== Mobile Hamburger =====
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      const icon = hamburger.querySelector('i');
+      icon.className = navLinks.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars';
+    });
+
+    // Close nav on link click (mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        const icon = hamburger.querySelector('i');
+        icon.className = 'fas fa-bars';
+      });
+    });
+
+    // ===== Active Nav Link Highlighting =====
+    const sections = document.querySelectorAll('section[id]');
+    const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+
+    function updateActiveLink() {
+      let current = '';
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if (top <= 200) {
+          current = section.getAttribute('id');
+        }
+      });
+      navAnchors.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveLink, { passive: true });
+    updateActiveLink();
+
+    // ===== Intersection Observer for Scroll Animations =====
+    (function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      // Observe all anim-fade-up containers
+      document.querySelectorAll('.anim-fade-up').forEach(el => observer.observe(el));
+      // Observe all anim-fade-up-item cards
+      document.querySelectorAll('.anim-fade-up-item').forEach(el => observer.observe(el));
+    })();
+
+    // ===== Smooth Scrolling for Nav Links =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth',
-          block: 'center'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
       });
     });
   </script>
